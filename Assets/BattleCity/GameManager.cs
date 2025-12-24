@@ -10,6 +10,7 @@ public class GameManager : NetworkBehaviour
 
     public NetworkManager networkManager;
     public TankSpawner tankSpawner;
+    public PlayerUIManager playerUIManager;
 
     public TextMeshProUGUI countdownText;
     public TextMeshProUGUI resultText;

@@ -4,6 +4,7 @@ using System;
 
 public class PlayerUIManager : MonoBehaviour
 {
+
     public TextMeshProUGUI BulletCount;
     public TextMeshProUGUI TankHp;
     public TextMeshProUGUI SpecialCount;
@@ -11,19 +12,6 @@ public class PlayerUIManager : MonoBehaviour
 
     public Action OnReload;
     public Action OnSpecial;
-
-
-
-    void Awake()
-    {
-
-
-
-        DontDestroyOnLoad(gameObject);
-
-        OnReload = null;
-        OnSpecial = null;
-    }
 
     public void UpdateUIHp(int hp, int maxHp)
     {

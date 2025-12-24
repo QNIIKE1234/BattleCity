@@ -20,7 +20,6 @@ public class TankHealth : NetworkBehaviour
     private Collider2D[] colliders;
     private Renderer[] renderers;
 
-    public PlayerUIManager playerUIManager;
 
     void Awake()
     {
@@ -34,7 +33,7 @@ public class TankHealth : NetworkBehaviour
         maxHp = hp;
         OnHpChanged(0, hp);
 
-        ResolvePlayerUI();
+
     }
 
     void OnHpChanged(int oldHp, int newHp)
@@ -42,7 +41,10 @@ public class TankHealth : NetworkBehaviour
         if (hpBar != null)
             hpBar.value = (float)newHp / maxHp;
 
-        playerUIManager.UpdateUIHp(hp, maxHp);
+        if (IsLocalPlayer)
+        {
+            GameManager.Instance.playerUIManager.UpdateUIHp(hp, maxHp);
+        }
     }
 
     // ================= DAMAGE =================
@@ -133,10 +135,4 @@ public class TankHealth : NetworkBehaviour
             r.enabled = visible;
     }
 
-    void ResolvePlayerUI()
-    {
-        if (!IsLocalPlayer) return;
-
-        playerUIManager = GameObject.Find("CanvaUI")?.GetComponentInChildren<PlayerUIManager>(true);
-    }
 }

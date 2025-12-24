@@ -365,7 +365,6 @@ GameObject:
   - component: {fileID: 4202605098491024760}
   - component: {fileID: -4775510545239276766}
   - component: {fileID: 4247718674825317412}
-  - component: {fileID: 2402697703723667564}
   m_Layer: 5
   m_Name: Tank2
   m_TagString: Tank
@@ -616,18 +615,6 @@ MonoBehaviour:
   hpBar: {fileID: 5568614003974643706}
   ExplosionVFX: {fileID: 1820694262426383474, guid: d6883b4bc85821d418993caf861b5d99, type: 3}
   ShotVFX: {fileID: 989434970533088810, guid: f1c926fb799c01a4991cbd8b9cfe78ad, type: 3}
---- !u!114 &2402697703723667564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4790907803800364100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad93ff2010555c41ab0f10cfc73c0ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Billboard
 --- !u!1 &5365436991207947525
 GameObject:
   m_ObjectHideFlags: 0

@@ -1966,7 +1966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -610, y: 80}
+  m_AnchoredPosition: {x: -220, y: 80}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696094069
@@ -10055,7 +10055,7 @@ MonoBehaviour:
   spawnPrefabs:
   - {fileID: 6282470363922107421, guid: 4148389dbf106e4449d294b5bc8f773a, type: 3}
   - {fileID: 5292688376806226711, guid: ac4caae373aaaea49be1afed5e357e83, type: 3}
-  - {fileID: 6282470363922107421, guid: 9cd80eed7599a6146990203d3fff13a7, type: 3}
+  - {fileID: 6282470363922107421, guid: b2c8cbe61d63f3b4b81555d596665200, type: 3}
   - {fileID: 3099715740595156980, guid: d6883b4bc85821d418993caf861b5d99, type: 3}
   - {fileID: 2090885802849865630, guid: f1c926fb799c01a4991cbd8b9cfe78ad, type: 3}
   - {fileID: 5292688376806226711, guid: 9ca4cfc3860863847a8abdb42a6fc923, type: 3}
@@ -10120,7 +10120,7 @@ MonoBehaviour:
     Interval: 0.1
   networkManager: {fileID: 1074630084}
   tankPrefabHost: {fileID: 4790907803800364100, guid: 4148389dbf106e4449d294b5bc8f773a, type: 3}
-  tankPrefabClient: {fileID: 4790907803800364100, guid: 9cd80eed7599a6146990203d3fff13a7, type: 3}
+  tankPrefabClient: {fileID: 4790907803800364100, guid: b2c8cbe61d63f3b4b81555d596665200, type: 3}
   min: {x: -8, y: -4}
   max: {x: 8, y: 4}
   checkRadius: 0.6
@@ -10899,7 +10899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1245742153
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11048,7 +11048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -615, y: 169.60004}
+  m_AnchoredPosition: {x: -225, y: 169.60004}
   m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1259394253
@@ -11774,6 +11774,7 @@ MonoBehaviour:
     Interval: 0.1
   networkManager: {fileID: 1074630084}
   tankSpawner: {fileID: 1074630095}
+  playerUIManager: {fileID: 1901586329}
   countdownText: {fileID: 2041549897}
   resultText: {fileID: 2041549897}
   sound: {fileID: 1116139283}
@@ -12635,7 +12636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1826237573
 RectTransform:
   m_ObjectHideFlags: 0

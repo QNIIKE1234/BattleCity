@@ -20,8 +20,6 @@ public class TankController : NetworkBehaviour
     public Transform firePoint;
     public GameObject Tank;
 
-    public PlayerUIManager playerUIManager;
-
     [SyncVar(hook = nameof(OnBulletChanged))]
     int bulletCount;
 
@@ -47,35 +45,22 @@ public class TankController : NetworkBehaviour
             bulletCount = maxBullet;
             specialPoint = 20;
         }
-        ResolvePlayerUI();
+
         TryBindUI();
-    }
-
-    void OnEnable()
-    {
-        TryBindUI();
-    }
-
-    void OnDestroy()
-    {
-        if (!IsLocalPlayer) return;
-
-        playerUIManager.OnReload -= OnReloadPressed;
-        playerUIManager.OnSpecial -= OnSpecialPressed;
     }
 
     void TryBindUI()
     {
-        if (!IsLocalPlayer) return;
+        if (IsLocalPlayer)
+        {
 
-        playerUIManager.OnReload -= OnReloadPressed;
-        playerUIManager.OnSpecial -= OnSpecialPressed;
+         GameManager.Instance.playerUIManager.OnReload += OnReloadPressed;
+         GameManager.Instance.playerUIManager.OnSpecial += OnSpecialPressed;
 
-        playerUIManager.OnReload += OnReloadPressed;
-        playerUIManager.OnSpecial += OnSpecialPressed;
+         GameManager.Instance.playerUIManager.UpdateBulletCount(bulletCount, maxBullet);
+         GameManager.Instance.playerUIManager.UpdateSpecialCount(specialPoint, maxSpecialPoint);
+        }
 
-        playerUIManager.UpdateBulletCount(bulletCount, maxBullet);
-        playerUIManager.UpdateSpecialCount(specialPoint, maxSpecialPoint);
     }
 
     void Update()
@@ -91,7 +76,9 @@ public class TankController : NetworkBehaviour
         CmdSetInput(input);
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
             CmdShootNormal();
+        }
     }
 
     void FixedUpdate()
@@ -122,7 +109,7 @@ public class TankController : NetworkBehaviour
         if (bulletCount <= 0) return;
 
         lastShootTime = Time.time;
-        bulletCount--;
+        //bulletCount--;
 
         SpawnBullet(bulletPrefab);
     }
@@ -209,19 +196,19 @@ public class TankController : NetworkBehaviour
     void OnBulletChanged(int oldValue, int newValue)
     {
         if (IsLocalPlayer)
-            playerUIManager.UpdateBulletCount(newValue, maxBullet);
+        {
+
+             GameManager.Instance.playerUIManager.UpdateBulletCount(newValue, maxBullet);
+        }
     }
 
     void OnSpecialChanged(int oldValue, int newValue)
     {
         if (IsLocalPlayer)
-            playerUIManager.UpdateSpecialCount(newValue, maxSpecialPoint);
+        {
+
+             GameManager.Instance.playerUIManager.UpdateSpecialCount(newValue, maxSpecialPoint);
+        }
     }
 
-    void ResolvePlayerUI()
-    {
-        if (!IsLocalPlayer) return;
-
-        playerUIManager = GameObject.Find("CanvaUI")?.GetComponentInChildren<PlayerUIManager>(true);
-    }
 }
