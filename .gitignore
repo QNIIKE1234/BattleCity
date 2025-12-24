@@ -1,0 +1,61 @@
+# ===============================
+# Unity generated folders
+# ===============================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+
+# ===============================
+# Visual Studio / Rider / VSCode
+# ===============================
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+# ===============================
+# OS generated
+# ===============================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===============================
+# Crash / backup
+# ===============================
+*.stackdump
+*.bak
+*.tmp
+*.swp
+
+# ===============================
+# Unity cache
+# ===============================
+**/[Aa]ssets/**/[Ll]ibrary/
+**/[Aa]ssets/**/[Tt]emp/
+
+# ===============================
+# Addressables (ถ้าใช้)
+# ===============================
+[Aa]ssets/[Aa]ddressableAssetsData/*/*.bin*
+
+# ===============================
+# Builds output
+# ===============================
+*.apk
+*.aab
+*.exe
+*.app
+*.unitypackage
